@@ -12,6 +12,6 @@ npm i tsa-installer
 npx skills add espritoxyz/ton-ai-audit-skill
 ```
 
-Now you can ask your agent to audit your smark contract.
+Now you can ask your agent to audit your smart contract.
 
 Recommended model: `Claude Opus 4.6`.
