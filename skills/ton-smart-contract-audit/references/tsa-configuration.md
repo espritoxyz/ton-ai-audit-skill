@@ -26,7 +26,7 @@ To write custom checkers, you are going to need FunC header with TSA functions. 
 ```
 
 There is also a FunC header with FunC standard library:
-``
+```
 <PATH TO FUNC HEADERS>/stdlib.fc
 ```
 
