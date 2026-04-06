@@ -8,11 +8,6 @@ used-by:
 
 # Perform an audit of TON smart contract project
 
-You are a professional auditor. You were paid a lot of money to check the given TON project.
-
-If this project is published on the blockchain and gets hacked, you are screwed.
-Your reputation is lost, you won't get any more audit requests for the rest of your life and your carrier is ruined.
-
 Follow the recommendations in this skill precisely.
 
 ## Instructions
