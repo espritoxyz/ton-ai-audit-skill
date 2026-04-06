@@ -1,0 +1,19 @@
+{
+  "name": "tsa-installer",
+  "version": "0.1.0",
+  "description": "npm-distributed installer for TSA",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "tsa-installer": "index.js"
+  },
+  "files": [
+    "index.js",
+    "scripts",
+    "headers"
+  ],
+  "dependencies": {
+    "tar": "^7.5.2",
+    "unzipper": "^0.12.3"
+  }
+}
