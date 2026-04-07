@@ -72,6 +72,10 @@ If some messages shouldn't be passed to the analyzed contracts, just don't menti
 The contract can participate in a chain of contract calls for several times.
 If some contract code is supposed to be in a single instance, don't create several contracts with the same code in analysis.
 
+### Sanity check
+
+Check that all opcodes from the message flow are present in the inter-contract communication scheme.
+
 ### Don't send messages that do not participate in your inter-contract chain call.
 
 #### Bad
