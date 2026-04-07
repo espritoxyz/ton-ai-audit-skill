@@ -18,11 +18,13 @@ min((number_of_opcode_in_contract + 1) * 60 seconds, 300 seconds)
 
 If you are checking one specific opcode in single-contract analysis, use 60 seconds.
 
-## Use `--solver-timeout 5` option for inter-contract analysis
+## Use `--solver-timeout 3` option for inter-contract analysis
 
 In inter-contract analysis constraints are much harder than for single-contract analysis, so default 1 second is not enough.
 
-Use 5 seconds instead.
+Use 3 seconds instead.
+
+If you are running bounce-check, you can treat it as a single-contract analysis (since the second contract is trivial).
 
 ## Use `--stop-when-exit-codes-found` option
 
@@ -69,6 +71,56 @@ If some messages shouldn't be passed to the analyzed contracts, just don't menti
 
 The contract can participate in a chain of contract calls for several times.
 If some contract code is supposed to be in a single instance, don't create several contracts with the same code in analysis.
+
+### Don't send messages that do not participate in your inter-contract chain call.
+
+#### Bad
+
+```
+[
+  {
+    "id": 1,
+    "inOpcodeToDestination": {
+      "00000001": {
+        "type": "out_opcodes",
+        "outOpcodeToDestination": {
+          "00000002": [2]
+        }
+      }
+    }
+    "other": {  // this is sending all other messages to contract 2. Don't do this!
+      "type": "out_opcodes",
+      "outOpcodeToDestination": {},
+      "other": [2]
+    }
+  },
+  {
+    "id": 2,
+    "inOpcodeToDestination": {}
+  }
+]
+```
+
+#### Good
+
+```
+[
+  {
+    "id": 1,
+    "inOpcodeToDestination": {
+      "00000001": {
+        "type": "out_opcodes",
+        "outOpcodeToDestination": {
+          "00000002": [2]
+        }
+      }
+    }
+  },
+  {
+    "id": 2,
+    "inOpcodeToDestination": {}
+  }
+```
 
 ## If analysis was long and nothing was found
 
