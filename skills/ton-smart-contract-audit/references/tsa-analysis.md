@@ -97,6 +97,8 @@ Specify the opcodes in inter-contract scheme and custom checkers.
 
 Do not forget to assert the starting opcode (with `tsa_assert` method) in the checker when inspecting specific inter-contract path.
 
+**Important**: Refer to `references/tsa-inter-contract-paths.md` for guidance on choosing valid entry points. The initial message is sent from a random address, so the entry opcode must not have sender address checks.
+
 ### Step 5: Construct checker, inter-contract communication scheme and run inter-contract analysis with TSA.
 
 For reference, see `bounce-check` and https://tonsec.dev/docs/inter-contract.
