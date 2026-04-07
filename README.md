@@ -1,5 +1,9 @@
 # TON Smart Contract Audit Skill
 
+## Requirements
+
+`func` and `fift` should be installed locally. You can get them from [here](https://github.com/ton-blockchain/ton/releases).
+
 ## Installation
 
 1. Add TSA installer via npm:
