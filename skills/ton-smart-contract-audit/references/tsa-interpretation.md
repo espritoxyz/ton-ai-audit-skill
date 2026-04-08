@@ -30,11 +30,7 @@ Find patterns in these inputs that led to the problem. Which part is the most im
 
 TSA finds SOME data that reproduces the input, not the most realistic one. That doesn't mean that no realistic input reproduces this behavior.
 
-Once you confirmed the finding in an ordinary sandbox test, you can try to modify the inputs to be more realistic. Or, alternatively, add assrtions in the checker to find more realistic input. Or run the analysis with concrete persistent data (which is actually faster than the analysis with symbolic persistent data).
-
-And remember, a user can send ANY message to a contract.
-
-Many contracts assume that the message is "correct": it has all the fields, in some special ranges and so on. But the contract MUST CHECK for these things and correctly reject bad messages. Otherwise, a user can send an unexpected message and hack the contract.
+And remember, a user can send ANY message to a contract. Many contracts assume that the message is "correct": it has all the fields, in some special ranges and so on. But the contract MUST CHECK for these things and correctly reject bad messages. Otherwise, a user can send an unexpected message and hack the contract.
 
 ## Step 3 - Find the exploit trace in the source code
 
